@@ -25,7 +25,7 @@
 
 ----
 
-# Debugging
+# What Did I Debug?
 
 - index.html
 
