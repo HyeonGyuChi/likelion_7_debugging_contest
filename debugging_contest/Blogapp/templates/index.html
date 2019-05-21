@@ -1,19 +1,21 @@
-{% extends 'base' %}
+{% extends 'base.html' %}
 
 {% block content %}
 <hr>
-{% for post in post.all %}
+
+{% for post in posts %}
 <div class="container">
     <div class="card">
         <div class="card-body">
             <h2 class="card-title">{{post.title}}</h2>
             <h6 class="card-subtitle mb-2 text-muted">{{post.pub_date}}</h6>
             <p class="card-text">{{post.summary}}</p>
-        <a href="{%url 'detail' post_id%}" class="card-link">...more  </a>
-        <a href="{%url 'edit' post._id%}" class="card-link">edit  </a>
-        <a href="{%url 'delete' post_id%}" class="card-link">delete</a>
+        <a href="{%url 'detail' post.id%}" class="card-link">...more  </a>
+        <a href="{%url 'edit' post.id%}" class="card-link">edit  </a>
+        <a href="{%url 'delete' post.id%}" class="card-link">delete</a>
         </div>
     </div><br>
 </div>
+{% endfor %}
 
 {% endblock %}
